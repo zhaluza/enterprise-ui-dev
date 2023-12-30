@@ -1,18 +1,20 @@
-name: Run Unit Tests
+name: Run Unit Tests & Build
 
 on:
-    push:
-        branches: [main]
-    pull_request:
-        branches: [main]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-    build-and-test:
-        runs-on: ubuntu-latest
+  build-and-test:
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v4
-            - name: Set up Node
-              uses: actions/setup-node@v4
-            - run: npm ci
-            - run: npm test
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+      - run: npm ci
+      - run: npm test
+      - run: npm build
