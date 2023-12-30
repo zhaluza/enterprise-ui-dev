@@ -36,7 +36,7 @@ jobs:
 
 Okay, so what's going on here:
 
-- `name`: Signifies the name of the worklow, which you can see in the screenshot.
+- `name`: Signifies the name of the workflow, which you can see in the screenshot.
 - `on`: What kind of [event](Github%20Actions%20Events.md) are we listening for? In this case, we're listening for two events:
   - A `push` to the main branch.
   - A `pull_request` that targets the main branch.
